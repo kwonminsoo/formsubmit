@@ -1,0 +1,51 @@
+#include<fstream> // file handling
+#include<iomanip> // setw, fetch system date and time
+
+ using namespace std;
+
+ time_t current = time(0);
+ char* dt = ctime(&current);
+
+ int main ()
+  {
+   char title[20]="cppHindiTutorials";
+   char student[20]="Rahul";
+
+   int mobile = 1111111;
+
+
+ ofstream fout("invoice.txt"); // txt file create
+ fout<<"\n\t"; 
+
+ for(int i=0;i<48;i++)
+  fout<<"_";
+
+ fout<<endl; // next line 
+
+
+ fout<<setw(35)<<"Card\n";
+ fout<<setw(45)<<"______________________"<<setw(14)<<"\n";
+
+ fout<<"\t"<<setw(48);
+ fout<<"\n\t\tTITLE..."<<title;
+
+ fout<<"\n\n\t\tMOBILE NO...........+91";
+ fout<<mobile<<setw(9)<<"\n";
+ fout<<setw(48);
+ fout<<"\n\tDate and Time........";
+ fout<<dt;
+
+ fout<<"\n\n\t\t >>Thank You For Visiting<<";
+
+ fout<<setw(13)<<"\n";
+ fout<<setw(49)<<"\n\n";
+
+ fout<<setw(30)<<"* * *"<<setw(24)<<"\n";
+ fout<<setw(48);
+ fout<<"\n\t";
+
+ for(int j=0;j<48;j++)
+  fout<<"_";
+
+return 0;
+}
